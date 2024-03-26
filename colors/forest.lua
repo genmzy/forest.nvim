@@ -1,1 +1,1 @@
-require("forest")._load()
+require("forest")._load("forest_light")
