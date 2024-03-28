@@ -4,33 +4,33 @@ local config = require("forest.config").options
 local forest = {}
 
 forest.normal = {
-  a = { bg = colors.blue, fg = colors.black },
+  a = { bg = colors.blue, fg = colors.bg },
   b = { bg = colors.fg_gutter, fg = colors.blue },
   c = { bg = colors.bg_statusline, fg = colors.fg_sidebar },
 }
 
 forest.insert = {
-  a = { bg = colors.green, fg = colors.black },
+  a = { bg = colors.green, fg = colors.bg },
   b = { bg = colors.fg_gutter, fg = colors.green },
 }
 
 forest.command = {
-  a = { bg = colors.yellow, fg = colors.black },
+  a = { bg = colors.yellow, fg = colors.bg },
   b = { bg = colors.fg_gutter, fg = colors.yellow },
 }
 
 forest.visual = {
-  a = { bg = colors.magenta, fg = colors.black },
+  a = { bg = colors.magenta, fg = colors.bg },
   b = { bg = colors.fg_gutter, fg = colors.magenta },
 }
 
 forest.replace = {
-  a = { bg = colors.red, fg = colors.black },
+  a = { bg = colors.red, fg = colors.bg },
   b = { bg = colors.fg_gutter, fg = colors.red },
 }
 
 forest.terminal = {
-  a = { bg = colors.green1, fg = colors.black },
+  a = { bg = colors.green1, fg = colors.bg },
   b = { bg = colors.fg_gutter, fg = colors.green1 },
 }
 
