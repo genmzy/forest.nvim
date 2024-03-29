@@ -5,142 +5,48 @@ local M = {}
 ---@class Palette
 M.default = {
   none = "NONE",
-  bg_dark = "#1f2335",
-  bg = "#24283b",
-  bg_highlight = "#292e42",
-  terminal_black = "#414868",
-  fg = "#c0caf5",
-  fg_dark = "#a9b1d6",
-  fg_gutter = "#3b4261",
-  dark3 = "#545c7e",
-  comment = "#565f89",
-  dark5 = "#737aa2",
-  blue0 = "#3d59a1",
-  blue = "#7aa2f7",
-  cyan = "#7dcfff",
-  blue1 = "#2ac3de",
-  blue2 = "#0db9d7",
-  blue5 = "#89ddff",
-  blue6 = "#b4f9f8",
+  bg_dark = "#f7f2e0", --
+  bg = "#fff9e8", --
+  bg_highlight = "#f0eed9", --
+  terminal_black = "#dcd8c4", --
+  fg = "#5c6a72", --
+  fg_dark = "#92978c", --
+  fg_gutter = "#e9e8d2",
+  dark3 = "#a0a79a",
+  comment = "#999f93", --
+  dark5 = "#576268",
+  blue0 = "#C1D1C8", --
+  blue = "#41A8B0", --
+  cyan = "#35a77c", --
+  blue1 = "#FF8E5E", --
+  blue2 = "#41BDB0",
+  blue5 = "#749A9F",
+  blue6 = "#b4f9f8", --
   blue7 = "#394b70",
-  magenta = "#bb9af7",
-  magenta2 = "#ff007c",
-  purple = "#9d7cd8",
-  orange = "#ff9e64",
-  yellow = "#e0af68",
-  green = "#9ece6a",
-  green1 = "#73daca",
-  green2 = "#41a6b5",
-  teal = "#1abc9c",
-  red = "#f7768e",
-  red1 = "#db4b4b",
-  git = { change = "#6183bb", add = "#449dab", delete = "#914c54" },
-  gitSigns = {
-    add = "#266d6a",
-    change = "#536c9e",
-    delete = "#b2555b",
-  },
+  purple = "#f85552", --
+  magenta2 = "#d699b6",
+  magenta = "#d67ba7", --
+  orange = "#f57d26", --
+  yellow = "#dfa000", --
+  green = "#8da101", --
+  green1 = "#35a77c", --
+  green2 = "#636835",
+  teal = "#4fd6be", --
+  red = "#f85552", --
+  red1 = "#e67e80", --
 }
 
-M.night = {
-  bg = "#1a1b26",
-  bg_dark = "#16161e",
+M.default.comment = util.blend(M.default.comment, M.default.bg, "bb")
+M.default.git = {
+  change = util.blend(M.default.blue, M.default.bg, "ee"),
+  add = util.blend(M.default.green, M.default.bg, "ee"),
+  delete = util.blend(M.default.red, M.default.bg, "dd"),
 }
-M.day = M.night
-
-M.moon = function()
-  local ret = {
-    none = "NONE",
-    bg_dark = "#1e2030", --
-    bg = "#222436", --
-    bg_highlight = "#2f334d", --
-    terminal_black = "#444a73", --
-    fg = "#c8d3f5", --
-    fg_dark = "#828bb8", --
-    fg_gutter = "#3b4261",
-    dark3 = "#545c7e",
-    comment = "#7a88cf", --
-    dark5 = "#737aa2",
-    blue0 = "#3e68d7", --
-    blue = "#82aaff", --
-    cyan = "#86e1fc", --
-    blue1 = "#65bcff", --
-    blue2 = "#0db9d7",
-    blue5 = "#89ddff",
-    blue6 = "#b4f9f8", --
-    blue7 = "#394b70",
-    purple = "#fca7ea", --
-    magenta2 = "#ff007c",
-    magenta = "#c099ff", --
-    orange = "#ff966c", --
-    yellow = "#ffc777", --
-    green = "#c3e88d", --
-    green1 = "#4fd6be", --
-    green2 = "#41a6b5",
-    teal = "#4fd6be", --
-    red = "#ff757f", --
-    red1 = "#c53b53", --
-  }
-  ret.comment = util.blend(ret.comment, ret.bg, "bb")
-  ret.git = {
-    change = util.blend(ret.blue, ret.bg, "ee"),
-    add = util.blend(ret.green, ret.bg, "ee"),
-    delete = util.blend(ret.red, ret.bg, "dd"),
-  }
-  ret.gitSigns = {
-    change = util.blend(ret.blue, ret.bg, "66"),
-    add = util.blend(ret.green, ret.bg, "66"),
-    delete = util.blend(ret.red, ret.bg, "aa"),
-  }
-  return ret
-end
-
-M.forest_light = function()
-  local ret = {
-    none = "NONE",
-    bg_dark = "#f7f2e0", --
-    bg = "#fff9e8", --
-    bg_highlight = "#f0eed9", --
-    terminal_black = "#dcd8c4", --
-    fg = "#5c6a72", --
-    fg_dark = "#92978c", --
-    fg_gutter = "#e9e8d2",
-    dark3 = "#e4e1cd",
-    comment = "#999f93", --
-    dark5 = "#576268",
-    blue0 = "#C1D1C8", --
-    blue = "#41A8B0", --
-    cyan = "#35a77c", --
-    blue1 = "#FF8E5E", --
-    blue2 = "#41BDB0",
-    blue5 = "#749A9F",
-    blue6 = "#b4f9f8", --
-    blue7 = "#394b70",
-    purple = "#f85552", --
-    magenta2 = "#d699b6",
-    magenta = "#d67ba7", --
-    orange = "#f57d26", --
-    yellow = "#dfa000", --
-    green = "#8da101", --
-    green1 = "#35a77c", --
-    green2 = "#636835",
-    teal = "#4fd6be", --
-    red = "#f85552", --
-    red1 = "#e67e80", --
-  }
-  ret.comment = util.blend(ret.comment, ret.bg, "bb")
-  ret.git = {
-    change = util.blend(ret.blue, ret.bg, "ee"),
-    add = util.blend(ret.green, ret.bg, "ee"),
-    delete = util.blend(ret.red, ret.bg, "dd"),
-  }
-  ret.gitSigns = {
-    change = util.blend(ret.blue, ret.bg, "66"),
-    add = util.blend(ret.green, ret.bg, "66"),
-    delete = util.blend(ret.red, ret.bg, "aa"),
-  }
-  return ret
-end
+M.default.gitSigns = {
+  change = util.blend(M.default.blue, M.default.bg, "66"),
+  add = util.blend(M.default.green, M.default.bg, "66"),
+  delete = util.blend(M.default.red, M.default.bg, "aa"),
+}
 
 ---@return ColorScheme
 function M.setup(opts)
@@ -168,7 +74,7 @@ function M.setup(opts)
   }
 
   colors.git.ignore = colors.dark3
-  colors.black = util.darken(colors.bg, 0.8, "#000000")
+  colors.black = util.lighten(colors.bg, 0.8, "#ffffff")
   colors.border_highlight = util.darken(colors.blue1, 0.8)
   colors.border = colors.black
 
