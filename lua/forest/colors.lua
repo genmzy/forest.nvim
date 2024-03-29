@@ -8,7 +8,7 @@ M.default = {
   bg_dark = "#f7f2e0", --
   bg = "#fff9e8", --
   bg_highlight = "#f0eed9", --
-  terminal_black = "#dcd8c4", --
+  terminal_black = "#a0a79a", --
   fg = "#5c6a72", --
   fg_dark = "#92978c", --
   fg_gutter = "#e9e8d2",
@@ -38,9 +38,9 @@ M.default = {
 
 M.default.comment = util.blend(M.default.comment, M.default.bg, "bb")
 M.default.git = {
-  change = util.blend(M.default.blue, M.default.bg, "ee"),
-  add = util.blend(M.default.green, M.default.bg, "ee"),
-  delete = util.blend(M.default.red, M.default.bg, "dd"),
+  change = util.blend(M.default.blue, M.default.bg, "66"),
+  add = util.blend(M.default.green, M.default.bg, "66"),
+  delete = util.blend(M.default.red, M.default.bg, "aa"),
 }
 M.default.gitSigns = {
   change = util.blend(M.default.blue, M.default.bg, "66"),
@@ -74,7 +74,7 @@ function M.setup(opts)
   }
 
   colors.git.ignore = colors.dark3
-  colors.black = util.lighten(colors.bg, 0.8, "#ffffff")
+  colors.black = util.darken(colors.bg, 0.8, "#000000")
   colors.border_highlight = util.darken(colors.blue1, 0.8)
   colors.border = colors.black
 

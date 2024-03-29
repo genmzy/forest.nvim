@@ -294,7 +294,7 @@ function M.setup()
     ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 
     --- Types
-    ["@type.builtin"] = { fg = util.lighten(c.blue1, 0.8) },
+    ["@type.builtin"] = { fg = util.darken(c.blue1, 0.8, "#999f93") },
     ["@variable.member"] = { fg = c.green1 }, -- For fields.
     ["@property"] = { fg = c.green1 },
 
@@ -483,6 +483,7 @@ function M.setup()
     NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
     NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
     NeoTreeDimText = { fg = c.fg_gutter },
+    NeoTreeDotfile = { fg = c.terminal_black },
 
     -- Fern
     FernBranchText = { fg = c.blue },
@@ -633,7 +634,7 @@ function M.setup()
     -- Cmp
     CmpDocumentation = { fg = c.fg, bg = c.bg_float },
     CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },
-    CmpGhostText = { fg = c.terminal_black },
+    CmpGhostText = { fg = c.dark3 },
 
     CmpItemAbbr = { fg = c.fg, bg = c.none },
     CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, strikethrough = true },
